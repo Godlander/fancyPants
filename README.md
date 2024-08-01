@@ -14,7 +14,7 @@ the integer display color determines which texture to use, starting from 0
 
 for example, to equip the second custom chestplate:
 
-`/item replace entity @s armor.chest with leather_chestplate{display:{color:1}}`
+`/item replace entity @s armor.chest with minecraft:leather_chestplate[dyed_color=1]`
 
 *colors beyond total number of armor textures will default to use the first texture, but with tint color applied*
 
