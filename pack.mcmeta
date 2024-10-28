@@ -1,6 +1,6 @@
 ﻿{
-    "pack": {
-        "pack_format": 32,
-        "description": "but less fancy"
-    }
+  "pack": {
+    "pack_format": 42,
+    "description": "but less fancy"
+  }
 }

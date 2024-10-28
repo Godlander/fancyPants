@@ -1,7 +1,7 @@
 #version 150
 
-#moj_import <light.glsl>
-#moj_import <fog.glsl>
+#moj_import <minecraft:light.glsl>
+#moj_import <minecraft:fog.glsl>
 
 in vec3 Position;
 in vec4 Color;
@@ -11,11 +11,11 @@ in ivec2 UV2;
 in vec3 Normal;
 
 uniform sampler2D Sampler0;
-uniform sampler2D Sampler1;
 uniform sampler2D Sampler2;
 
 uniform mat4 ModelViewMat;
 uniform mat4 ProjMat;
+uniform mat4 TextureMat;
 uniform int FogShape;
 
 uniform vec3 Light0_Direction;
@@ -27,7 +27,6 @@ out vec4 tintColor;
 out vec4 lightColor;
 out vec4 overlayColor;
 out vec2 uv;
-out vec4 normal;
 
 int toint(vec3 c) {
     ivec3 v = ivec3(c*255);
@@ -40,10 +39,8 @@ void main() {
     vertexDistance = fog_distance(Position, FogShape);
     tintColor = Color;
     vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, Normal, vec4(1));
-    lightColor = minecraft_sample_lightmap(Sampler2, UV2);
-    overlayColor = texelFetch(Sampler1, UV1, 0);
+    lightColor = texelFetch(Sampler2, UV2 / 16, 0);
     uv = UV0;
-    normal = ProjMat * ModelViewMat * vec4(Normal, 0.0);
 
     //number of armors from texture size
     vec2 size = textureSize(Sampler0, 0);

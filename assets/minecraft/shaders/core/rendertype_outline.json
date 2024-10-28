@@ -1,16 +1,6 @@
 {
-    "blend": {
-        "func": "add",
-        "srcrgb": "srcalpha",
-        "dstrgb": "1-srcalpha"
-    },
-    "vertex": "render/glowing",
-    "fragment": "render/glowing",
-    "attributes": [
-        "Position",
-        "Color",
-        "UV0"
-    ],
+    "vertex": "minecraft:core/render/glowing",
+    "fragment": "minecraft:core/render/glowing",
     "samplers": [
         { "name": "Sampler0" }
     ],

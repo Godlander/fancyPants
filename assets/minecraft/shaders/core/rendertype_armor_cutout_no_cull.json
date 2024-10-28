@@ -1,22 +1,8 @@
 {
-    "blend": {
-        "func": "add",
-        "srcrgb": "srcalpha",
-        "dstrgb": "1-srcalpha"
-    },
-    "vertex": "render/armor",
-    "fragment": "render/armor",
-    "attributes": [
-        "Position",
-        "Color",
-        "UV0",
-        "UV1",
-        "UV2",
-        "Normal"
-    ],
+    "vertex": "minecraft:core/render/armor",
+    "fragment": "minecraft:core/render/armor",
     "samplers": [
         { "name": "Sampler0" },
-        { "name": "Sampler1" },
         { "name": "Sampler2" }
     ],
     "uniforms": [

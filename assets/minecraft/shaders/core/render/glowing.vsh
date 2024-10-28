@@ -21,6 +21,6 @@ void main() {
     //cannot pass tint color here so it's the only option
     vec2 size = textureSize(Sampler0, 0);
     if (size.y >= 2*size.x && size.x < 256) {
-        uv.y /= 2.*size.y/size.x;
+        uv.y /= 2*size.y/size.x;
     }
 }
